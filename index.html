@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #050712;
+      --bg: #000000;
       --fg: #e9edf7;
       --muted: #92a3c7;
       --accent: #82ffe5;
@@ -22,7 +22,7 @@
     body {
       margin: 0;
       min-height: 100vh;
-      font-family: '"'"'"'"'"'Neue Haas Display'"'"', '"'"'Segoe UI'"'"', system-ui, sans-serif;
+      font-family: "Space Grotesk", "Times New Roman", system-ui, sans-serif;
       background: var(--bg);
       color: var(--fg);
       display: flex;
@@ -168,6 +168,28 @@
       border-color: rgba(255, 255, 255, 0.3);
       transform: translateY(-2px);
     }
+    .stars {
+      position: absolute;
+      inset: 0;
+      background:
+      radial-gradient(1px 1px at 10% 20%, rgba(255, 255, 255, 0.8), transparent),
+      radial-gradient(1px 1px at 30% 80%, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1px 1px at 70% 40%, rgba(255,255,255,0.7), transparent),
+      radial-gradient(1px 1px at 90% 60%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1px 1px at 50% 10%, rgba(255,255,255,0.9), transparent),
+      radial-gradient(2px 2px at 20% 50%, rgba(255,255,255,0.3), transparent),
+      radial-gradient(2px 2px at 80% 30%, rgba(255,255,255,0.25), transparent);
+      background-size: 400px 400px;
+      animation: starsDrift 120s linear infinite;
+      filter: drop-shadow(0 0 4px rgba(255,255,255,0.35));
+      mix-blend-mode: screen;
+      opacity: 0.6;
+    }
+
+    @keyframes starsDrift {
+      from { background-position: 0 0; }
+      to   { background-position: -400px 400px; }
+    }
 
     @keyframes gradientShift {
       0% {
@@ -213,6 +235,7 @@
 </head>
 <body>
   <div class=\"background\">
+    <div class="stars"></div>
     <div class=\"gradient\"></div>
     <div class=\"glow glow-a\"></div>
     <div class=\"glow glow-b\"></div>
