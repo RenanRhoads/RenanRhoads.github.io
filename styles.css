@@ -1,0 +1,220 @@
+:root {
+  --bg: #000000;
+  --fg: #e9edf7;
+  --muted: #92a3c7;
+  --accent: #82ffe5;
+  --accent-2: #728aff;
+  --accent-3: #ff7ac3;
+  --hover1: #20a58d;
+  --hover2: #bef898;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 120% at 20% 20%, rgba(130, 255, 229, 0.25), transparent 40%),
+    radial-gradient(110% 110% at 78% 12%, rgba(114, 138, 255, 0.22), transparent 36%),
+    radial-gradient(90% 90% at 45% 80%, rgba(255, 122, 195, 0.2), transparent 40%),
+    var(--bg);
+}
+
+.gradient {
+  position: absolute;
+  inset: -20%;
+  background: linear-gradient(120deg,
+    rgba(130, 255, 229, 0.4),
+    rgba(114, 138, 255, 0.35),
+    rgba(255, 122, 195, 0.35),
+    rgba(114, 138, 255, 0.32));
+  background-size: 180% 180%;
+  filter: blur(50px);
+  opacity: 0.7;
+  animation: gradientShift 18s ease-in-out infinite;
+}
+
+.glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.55;
+  mix-blend-mode: screen;
+}
+
+.glow-a {
+  width: 50vw;
+  height: 50vw;
+  left: -12%;
+  top: -8%;
+  background: radial-gradient(circle at 30% 30%, rgba(130, 255, 229, 0.65), transparent 60%);
+  animation: floatA 26s ease-in-out infinite;
+}
+
+.glow-b {
+  width: 45vw;
+  height: 45vw;
+  right: -10%;
+  bottom: -12%;
+  background: radial-gradient(circle at 40% 40%, rgba(255, 122, 195, 0.6), transparent 55%);
+  animation: floatB 24s ease-in-out infinite;
+}
+
+.grid {
+  position: absolute;
+  inset: -20%;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 120px 120px;
+  transform: perspective(800px) rotateX(65deg) translateY(-10%);
+  opacity: 0.16;
+  animation: gridDrift 30s linear infinite;
+  mix-blend-mode: screen;
+}
+
+.content {
+  width: min(720px, 100%);
+  background: rgba(5, 7, 18, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 2.75rem 2.25rem;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px) saturate(135%);
+}
+
+.eyebrow {
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: var(--accent);
+  margin: 0 0 0.8rem;
+}
+
+h1 {
+  margin: 0 0 0.85rem;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  letter-spacing: -0.03em;
+}
+
+p {
+  margin: 0 0 1.6rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.cta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.35rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.btn.primary {
+  background: linear-gradient(120deg, var(--accent) 0%, var(--accent-2) 30%);
+  color: #ffffff;
+  box-shadow: 0 10px 40px rgba(114, 138, 255, 0.35);
+}
+
+.btn.primary:hover {
+  background: linear-gradient(120deg, var(--accent-2) 0%, var(--accent) 60%);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 50px rgba(114, 138, 255, 0.4);
+}
+
+.btn.ghost {
+  color: var(--fg);
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.btn.ghost:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.stars {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,1), transparent),
+    radial-gradient(1px 1px at 30% 80%, rgba(255,255,255,0.9), transparent),
+    radial-gradient(1px 1px at 70% 40%, rgba(255,255,255,0.95), transparent),
+    radial-gradient(1px 1px at 90% 60%, rgba(255,255,255,0.85), transparent),
+    radial-gradient(1.5px 1.5px at 50% 10%, rgba(255,255,255,1), transparent),
+    radial-gradient(2px 2px at 20% 50%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(2px 2px at 80% 30%, rgba(255,255,255,0.55), transparent);
+  background-size: 420px 420px;
+  opacity: 0.85;
+  mix-blend-mode: screen;
+  filter:
+    drop-shadow(0 0 6px rgba(255,255,255,0.55))
+    drop-shadow(0 0 12px rgba(255,255,255,0.25));
+  animation: starsDrift 140s linear infinite;
+}
+
+@keyframes starsDrift {
+  from { background-position: 0 0; }
+  to { background-position: -400px 400px; }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes floatA {
+  0% { transform: translate3d(-8%, -6%, 0) scale(1); }
+  50% { transform: translate3d(8%, 6%, 0) scale(1.05); }
+  100% { transform: translate3d(-8%, -6%, 0) scale(1); }
+}
+
+@keyframes floatB {
+  0% { transform: translate3d(8%, 10%, 0) scale(1); }
+  50% { transform: translate3d(-10%, -8%, 0) scale(1.08); }
+  100% { transform: translate3d(8%, 10%, 0) scale(1); }
+}
+
+@keyframes gridDrift {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 120px 120px, 120px 120px; }
+}
+
+@media (max-width: 640px) {
+  body { padding: 2.5rem 1rem; }
+  .content { padding: 2.25rem 1.75rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gradient, .glow, .grid { animation: none; }
+}
