@@ -106,6 +106,7 @@ li {
 }
 
 #name {
+  flex: 1;
   font-family: 'Neue Haas Grotesk Text', sans-serif;
   font-size: 30px;
   text-align: center;
@@ -171,4 +172,25 @@ li {
 
 #p-greetings {
   text-align: center;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.horizontal-list {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  margin-left: auto;
+  padding: 0;
+}
+
+#pfp {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  justify-content: flex-start;
 }
