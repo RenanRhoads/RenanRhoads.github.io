@@ -132,6 +132,7 @@ li {
   font-family: 'Neue Haas Grotesk Text', sans-serif;
   font-size: 10px;
   text-align: center;
+  margin-top: 50vh;
 }
 
 #contato {
@@ -160,8 +161,8 @@ li {
   background-color: white;
   border-radius: 10px;
   padding: 5px;
-  height: 70px;
-  width: 135px;
+  height: 150px;
+  width: 270px;
 }
 
 #return-home {
