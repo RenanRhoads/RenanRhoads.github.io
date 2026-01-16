@@ -121,7 +121,7 @@ li {
 #body-background {
   color: white;
   background: #acacfc;
-  background: linear-gradient(221deg, rgb(12, 250, 230) 0%, rgba(36, 189, 255, 1) 52%, rgba(0, 0, 0, 1) 100%);
+  background: linear-gradient(221deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 52%, rgba(0, 0, 0, 1) 100%);
   min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
@@ -149,12 +149,12 @@ li {
 
 .container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 10px;
   width: auto;
   height: 100px;
-  /* flex-direction: column; Deixar vertical */
 }
 
 #img-background {
@@ -194,4 +194,19 @@ li {
   border-radius: 50%;
   object-fit: cover;
   justify-content: flex-start;
+}
+
+.container > img {
+  float: left;
+}
+
+@media (max-height: 600px), (max-width: 600px) {
+  #img-background {
+    height: 50px;
+    width: 90px;
+  }
+}
+
+.terminal {
+  position: fixed;
 }
