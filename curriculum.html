@@ -5,366 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Renan Moreira Pereira - Full CV</title>
   
-  <!-- Google Fonts - mesmas fontes da landing page -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   
-  <style>
-    /* ========================================
-       VARIÁVEIS CSS - Mesma paleta da landing page
-    ======================================== */
-    :root {
-      --bg-primary: #0a0a0a;
-      --bg-secondary: #141414;
-      --bg-card: #1a1a1a;
-      --text-primary: #f5f5f5;
-      --text-secondary: #888;
-      --accent: #00d4aa;
-      --accent-hover: #00eebb;
-      --border: #2a2a2a;
-      --font-main: 'Outfit', sans-serif;
-      --font-mono: 'Space Mono', monospace;
-    }
-
-    /* ========================================
-       RESET E BASE
-    ======================================== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: var(--font-main);
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.7;
-      min-height: 100vh;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    a:hover {
-      color: var(--accent-hover);
-    }
-
-    /* ========================================
-       CONTAINER PRINCIPAL
-    ======================================== */
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-
-    /* ========================================
-       BOTÃO DE VOLTAR
-    ======================================== */
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      margin-bottom: 2rem;
-      transition: color 0.3s ease;
-    }
-
-    .back-link:hover {
-      color: var(--accent);
-    }
-
-    .back-link svg {
-      transition: transform 0.3s ease;
-    }
-
-    .back-link:hover svg {
-      transform: translateX(-4px);
-    }
-
-    /* ========================================
-       HEADER DO CV
-    ======================================== */
-    .cv-header {
-      text-align: center;
-      padding: 3rem 0;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 3rem;
-    }
-
-    .cv-header h1 {
-      font-size: clamp(2rem, 6vw, 3rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.5rem;
-    }
-
-    .cv-header h2 {
-      font-family: var(--font-mono);
-      font-size: 1.1rem;
-      font-weight: 400;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
-    }
-
-    .contact-info {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-    }
-
-    .contact-info span {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    /* ========================================
-       SEÇÕES DO CV
-    ======================================== */
-    .section {
-      margin-bottom: 3rem;
-    }
-
-    .section-title {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      margin-bottom: 1.5rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    /* ========================================
-       RESUMO PROFISSIONAL
-    ======================================== */
-    .summary {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.5rem;
-      color: var(--text-primary);
-      line-height: 1.8;
-    }
-
-    /* ========================================
-       SKILLS
-    ======================================== */
-    .skills-group {
-      margin-bottom: 1.5rem;
-    }
-
-    .skills-group h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0.8rem;
-      color: var(--text-primary);
-    }
-
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .skill-tag {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      padding: 0.5rem 1rem;
-      border-radius: 25px;
-      font-size: 0.9rem;
-      font-family: var(--font-mono);
-      transition: all 0.3s ease;
-    }
-
-    .skill-tag:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    .skills-group.advanced .skill-tag {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    /* ========================================
-       EXPERIÊNCIA PROFISSIONAL
-    ======================================== */
-    .experience-item {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      transition: border-color 0.3s ease;
-    }
-
-    .experience-item:hover {
-      border-color: var(--accent);
-    }
-
-    .experience-header {
-      margin-bottom: 1rem;
-    }
-
-    .experience-header h3 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-    }
-
-    .experience-header .company {
-      color: var(--accent);
-      font-weight: 500;
-    }
-
-    .experience-header .period {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      font-family: var(--font-mono);
-    }
-
-    .experience-list {
-      list-style: none;
-      margin: 1rem 0;
-    }
-
-    .experience-list li {
-      position: relative;
-      padding-left: 1.5rem;
-      margin-bottom: 0.6rem;
-      color: var(--text-primary);
-    }
-
-    .experience-list li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0.6rem;
-      width: 6px;
-      height: 6px;
-      background: var(--accent);
-      border-radius: 50%;
-    }
-
-    .tech-used {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .tech-used span {
-      background: var(--bg-secondary);
-      color: var(--text-secondary);
-      padding: 0.3rem 0.7rem;
-      border-radius: 15px;
-      font-size: 0.75rem;
-      font-family: var(--font-mono);
-    }
-
-    /* ========================================
-       EDUCAÇÃO
-    ======================================== */
-    .education-item {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .education-item h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-    }
-
-    .education-item .institution {
-      color: var(--accent);
-    }
-
-    .education-item .period {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      font-family: var(--font-mono);
-    }
-
-    .education-item .project {
-      margin-top: 0.5rem;
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-    }
-
-    /* ========================================
-       CERTIFICAÇÕES E IDIOMAS
-    ======================================== */
-    .cert-list, .lang-list {
-      list-style: none;
-    }
-
-    .cert-list li, .lang-list li {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1rem 1.5rem;
-      margin-bottom: 0.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .cert-list .issuer, .lang-list .level {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      font-family: var(--font-mono);
-    }
-
-    /* ========================================
-       FOOTER
-    ======================================== */
-    footer {
-      text-align: center;
-      padding: 3rem 2rem;
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      border-top: 1px solid var(--border);
-    }
-
-    /* ========================================
-       RESPONSIVIDADE
-    ======================================== */
-    @media (max-width: 600px) {
-      .contact-info {
-        flex-direction: column;
-        gap: 0.8rem;
-      }
-
-      .cert-list li, .lang-list li {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.3rem;
-      }
-    }
-  </style>
+  <!-- CSS Externo -->
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
@@ -379,9 +26,7 @@
       Back to Home
     </a>
 
-    <!-- ========================================
-         HEADER DO CV
-    ======================================== -->
+    <!-- HEADER DO CV -->
     <header class="cv-header">
       <h1>Renan Moreira Pereira</h1>
       <h2>Senior Data Engineer</h2>
@@ -415,9 +60,7 @@
       </div>
     </header>
 
-    <!-- ========================================
-         RESUMO PROFISSIONAL
-    ======================================== -->
+    <!-- RESUMO PROFISSIONAL -->
     <section class="section">
       <h2 class="section-title">Professional Summary</h2>
       <div class="summary">
@@ -432,9 +75,7 @@
       </div>
     </section>
 
-    <!-- ========================================
-         SKILLS
-    ======================================== -->
+    <!-- SKILLS -->
     <section class="section">
       <h2 class="section-title">Skills</h2>
       
@@ -472,9 +113,7 @@
       </div>
     </section>
 
-    <!-- ========================================
-         EXPERIÊNCIA PROFISSIONAL
-    ======================================== -->
+    <!-- EXPERIÊNCIA PROFISSIONAL -->
     <section class="section">
       <h2 class="section-title">Professional Experience</h2>
 
@@ -579,9 +218,7 @@
       </article>
     </section>
 
-    <!-- ========================================
-         EDUCAÇÃO
-    ======================================== -->
+    <!-- EDUCAÇÃO -->
     <section class="section">
       <h2 class="section-title">Education</h2>
 
@@ -599,9 +236,7 @@
       </article>
     </section>
 
-    <!-- ========================================
-         CERTIFICAÇÕES
-    ======================================== -->
+    <!-- CERTIFICAÇÕES -->
     <section class="section">
       <h2 class="section-title">Certifications</h2>
       <ul class="cert-list">
@@ -620,9 +255,7 @@
       </ul>
     </section>
 
-    <!-- ========================================
-         IDIOMAS
-    ======================================== -->
+    <!-- IDIOMAS -->
     <section class="section">
       <h2 class="section-title">Languages</h2>
       <ul class="lang-list">
@@ -639,9 +272,7 @@
 
   </div>
 
-  <!-- ========================================
-       FOOTER
-  ======================================== -->
+  <!-- FOOTER -->
   <footer>
     &copy; 2025 Renan Moreira Pereira. All rights reserved.
   </footer>
